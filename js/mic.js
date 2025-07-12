@@ -16,13 +16,18 @@ window.addEventListener('DOMContentLoaded', function() {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
             mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
             source = audioContext.createMediaStreamSource(mediaStream);
-            source.connect(audioContext.destination); // 마이크 → 스피커
+            source.connect(audioContext.destination);
+
             status.textContent = '마이크 소리를 재생 중입니다.';
             status.style.color = "#7dcfff";
             startBtn.disabled = true;
             stopBtn.disabled = false;
-            startBtn.style.background = "#232323";
-            stopBtn.style.background = "linear-gradient(90deg,#444 60%,#c74646 100%)";
+
+            // 눌림 효과 추가
+            startBtn.classList.add('active-mic');
+            stopBtn.classList.remove('active-mic');
+            startBtn.innerHTML = "🎤 ON";
+            stopBtn.innerHTML = "🛑 마이크 중지";
         } catch (err) {
             status.textContent = '마이크 접근 실패: ' + err.message;
             status.style.color = "#c74646";
@@ -40,7 +45,11 @@ window.addEventListener('DOMContentLoaded', function() {
         status.style.color = "#bbbbbb";
         startBtn.disabled = false;
         stopBtn.disabled = true;
-        startBtn.style.background = "linear-gradient(90deg,#323232 80%,#2e4a7d 100%)";
-        stopBtn.style.background = "linear-gradient(90deg,#444 70%,#8f2222 100%)";
+
+        // 눌림 효과 해제
+        startBtn.classList.remove('active-mic');
+        stopBtn.classList.add('active-mic');
+        startBtn.innerHTML = "🎤 마이크 시작";
+        stopBtn.innerHTML = "🛑 OFF";
     };
 });
