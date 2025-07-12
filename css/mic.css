@@ -1,0 +1,6 @@
+.active-mic {
+    background: #ff4e4e !important;
+    color: #fff !important;
+    box-shadow: 0 0 10px #ffbbbb;
+    font-weight: bold;
+}
