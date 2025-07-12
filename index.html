@@ -68,6 +68,16 @@
     </nav>
 
     <!-- Header -->
+    <div id="mic-control" style="display:flex; align-items:center; gap:8px;">
+      <button id="startMicBtn" style="background:#222; color:#fff; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;">
+        <i class="fa fa-microphone"></i> 마이크 시작
+      </button>
+      <button id="stopMicBtn" style="background:#555; color:#fff; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;" disabled>
+        <i class="fa fa-microphone-slash"></i> 마이크 중지
+      </button>
+      <span id="micStatus" style="margin-left:12px; color:#999;">마이크 대기 중</span>
+    </div>
+    
     <header>
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
