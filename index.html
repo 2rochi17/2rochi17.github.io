@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Audio Mixer (Built-in MP3)</title>
+  <meta charset="UTF-8" />
+  <title>오디오 믹서</title>
 </head>
 <body>
-  <h1>🎧 내장된 IU 음원 믹서</h1>
-  <div id="sliders-container"></div>
-  <button onclick="sendMix()">🎚️ 믹싱 시작</button>
-  <p id="status"></p>
-  <audio id="player" controls style="margin-top: 20px;"></audio>
+  <h1>🎧 오디오 믹서</h1>
+  <label>🎤 보컬: <input type="range" min="-36" max="36" value="0" id="voice" /></label><br />
+  <label>🥁 드럼: <input type="range" min="-36" max="36" value="0" id="drums" /></label><br />
+  <label>🎸 베이스: <input type="range" min="-36" max="36" value="0" id="bass" /></label><br />
+  <label>🎹 기타/기타: <input type="range" min="-36" max="36" value="0" id="other" /></label><br />
+  <button onclick="sendMix()">믹싱 시작</button>
+  <p id="status">🎶 상태 대기 중</p>
+  <audio id="player" controls></audio>
+
   <script src="main.js"></script>
 </body>
 </html>
