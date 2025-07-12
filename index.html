@@ -68,14 +68,30 @@
     </nav>
 
     <!-- Header -->
-    <div id="mic-control" style="display:flex; align-items:center; gap:8px;">
-      <button id="startMicBtn" style="background:#222; color:#fff; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;">
-        <i class="fa fa-microphone"></i> 마이크 시작
+    <div id="mic-control" style="
+      display: flex; align-items: center; gap: 10px; 
+      background: #181818; border-radius: 8px; padding: 8px 16px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-top: 8px;
+    ">
+      <button id="startMicBtn" style="
+        background: linear-gradient(90deg,#323232 80%,#2e4a7d 100%);
+        color: #fff; border: none; padding: 8px 18px; font-size: 1rem;
+        border-radius: 6px; cursor: pointer; transition: background 0.2s;
+        font-weight: 600; letter-spacing: 1px;
+      ">
+        🎤 마이크 시작
       </button>
-      <button id="stopMicBtn" style="background:#555; color:#fff; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;" disabled>
-        <i class="fa fa-microphone-slash"></i> 마이크 중지
+      <button id="stopMicBtn" style="
+        background: linear-gradient(90deg,#444 70%,#8f2222 100%);
+        color: #fff; border: none; padding: 8px 18px; font-size: 1rem;
+        border-radius: 6px; cursor: pointer; transition: background 0.2s;
+        font-weight: 600; letter-spacing: 1px;
+      " disabled>
+        🛑 마이크 중지
       </button>
-      <span id="micStatus" style="margin-left:12px; color:#999;">마이크 대기 중</span>
+      <span id="micStatus" style="margin-left:14px; color:#bbbbbb; font-size:0.98rem;">
+        마이크 대기 중
+      </span>
     </div>
     
     <header>
